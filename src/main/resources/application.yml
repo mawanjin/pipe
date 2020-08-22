@@ -27,13 +27,18 @@ spring:
 
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:oracle:thin:@//10.99.1.18:1521:c##epa
-        username: c##epa
-        password: pwd
-        driver-class-name: oracle.jdbc.driver.OracleDriver
+
+        url: jdbc:oracle:thin:@192.168.1.15:1521:orcl
+        username: user2
+        password: 123456
+        driver-class-name: oracle.jdbc.OracleDriver
         initialSize: 1
         minIdle: 3
         maxActive: 20
+
+#        url: jdbc:oracle:thin:@//10.99.1.18:1521:c##epa
+#            username: c##epa
+#            password: pwd
 
 # 日志配置
 logging:
