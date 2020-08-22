@@ -1,0 +1,56 @@
+# 开发环境配置
+server:
+    # 服务器的HTTP端口，默认为80
+    port: 8080
+
+    servlet:
+        # 应用的访问路径
+        context-path: /pipe
+    tomcat:
+        # tomcat的URI编码
+        # tomcat最大线程数，默认为200
+        max-threads: 800
+        # Tomcat启动初始化的线程数，默认值25
+        min-spare-threads: 30
+
+# Spring配置
+spring:
+    # 模板引擎
+    thymeleaf:
+        mode: HTML
+        encoding: utf-8
+        # 禁用缓存
+        cache: false
+    jackson:
+        time-zone: GMT+8
+        date-format: yyyy-MM-dd HH:mm:ss
+
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:oracle:thin:@//10.99.1.18:1521:c##epa
+        username: c##epa
+        password: pwd
+        driver-class-name: oracle.jdbc.driver.OracleDriver
+        initialSize: 1
+        minIdle: 3
+        maxActive: 20
+
+# 日志配置
+logging:
+    level:
+        cn.first9: debug
+        org.springframework: warn
+
+
+# MyBatis
+mybatis:
+    # 搜索指定包别名
+    typeAliasesPackage: cn.first9.web.pipe.dao
+    # 配置mapper的扫描，找到所有的mapper.xml映射文件
+    mapperLocations: classpath*:mapper/*Mapper.xml
+
+
+#spring.datasource.driverClassName=oracle.jdbc.driver.OracleDriver
+#spring.datasource.url=thin:@//10.99.1.18:1521:c##epa
+#spring.datasource.username=c##epa
+#spring.datasource.password=pwd

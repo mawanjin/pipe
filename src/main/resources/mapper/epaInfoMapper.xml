@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.first9.web.pipe.dao.EpaInfoDao">
+
+    <resultMap type="cn.first9.web.pipe.vo.EpaInfo" id="EpaInfoResult">
+        <id     property="TAGNAME"        column="TAGNAME"        />
+        <result property="TAGINFO"      column="TAGINFO"      />
+        <result property="FREQUENCY"   column="FREQUENCY"   />
+        <result property="TANKNUM"   column="TANKNUM"   />
+        <result property="SENSORNUM"   column="SENSORNUM"   />
+
+    </resultMap>
+
+
+    <sql id="selectInfoTableVo">
+        select TAGNAME, TAGINFO, FREQUENCY, TANKNUM, SENSORNUM from EPA_INFO
+    </sql>
+
+    <select id="selectAll" parameterType="cn.first9.web.pipe.vo.EpaInfo" resultMap="EpaInfoResult">
+        <include refid="selectInfoTableVo"/>
+        <where>
+            <if test="TAGINFO != null and TAGINFO != ''">
+                AND lower(TAGINFO) like lower(concat('%', #{TAGINFO}, '%'))
+            </if>
+            and rownum <![CDATA[ <= ]]> 10
+        </where>
+
+    </select>
+
+
+
+</mapper>
