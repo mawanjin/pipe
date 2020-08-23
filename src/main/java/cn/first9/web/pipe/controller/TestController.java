@@ -19,6 +19,7 @@ public class TestController {
     public TestVO test(){
         TestVO t = new TestVO();
         t.setName("lala");
+        t.setAddress("xdsfdsafdsaf");
         return t;
     }
 }

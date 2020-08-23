@@ -7,15 +7,16 @@
     <resultMap type="cn.first9.web.pipe.vo.EpaInfo" id="EpaInfoResult">
         <id     property="TAGNAME"        column="TAGNAME"        />
         <result property="TAGINFO"      column="TAGINFO"      />
-        <result property="FREQUENCY"   column="FREQUENCY"   />
-        <result property="TANKNUM"   column="TANKNUM"   />
-        <result property="SENSORNUM"   column="SENSORNUM"   />
+<!--        <result property="FREQUENCY"   column="FREQUENCY"   />-->
+<!--        <result property="TANKNUM"   column="TANKNUM"   />-->
+<!--        <result property="SENSORNUM"   column="SENSORNUM"   />-->
 
     </resultMap>
 
 
     <sql id="selectInfoTableVo">
-        select TAGNAME, TAGINFO, FREQUENCY, TANKNUM, SENSORNUM from EPA_INFO
+--         select TAGNAME, TAGINFO, FREQUENCY, TANKNUM, SENSORNUM from EPA_INFO
+        select TAGNAME,TAGINFO from EPA_INFO
     </sql>
 
     <select id="selectAll" parameterType="cn.first9.web.pipe.vo.EpaInfo" resultMap="EpaInfoResult">

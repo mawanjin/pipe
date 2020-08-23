@@ -72,7 +72,7 @@ public class MainController {
                 //进口
                 String tagName = tag+st+"进口";
                 EpaInfo info = new EpaInfo();
-                info.setTAGINFO(tagName);
+//                info.setTAGINFO(tagName);
                 List<EpaInfo> infos = epaInfoService.getDeviceInfo(info);
                 if(infos!=null && infos.size()>0){
                     info = infos.get(0);
@@ -93,7 +93,7 @@ public class MainController {
                 //出口
                 tagName = tag+st+"出口";
                 info = new EpaInfo();
-                info.setTAGINFO(tagName);
+//                info.setTAGINFO(tagName);
                 infos = epaInfoService.getDeviceInfo(info);
                 if(infos!=null && infos.size()>0){
                     info = infos.get(0);
@@ -162,7 +162,7 @@ public class MainController {
                 //进口
                 String tagName = tag+st+"进口";
                 EpaInfo info = new EpaInfo();
-                info.setTAGINFO(tagName);
+//                info.setTAGINFO(tagName);
                 List<EpaInfo> infos = epaInfoService.getDeviceInfo(info);
                 if(infos!=null && infos.size()>0){
                     info = infos.get(0);
@@ -183,7 +183,7 @@ public class MainController {
                 //出口
                 tagName = tag+st+"出口";
                 info = new EpaInfo();
-                info.setTAGINFO(tagName);
+//                info.setTAGINFO(tagName);
                 infos = epaInfoService.getDeviceInfo(info);
                 if(infos!=null && infos.size()>0){
                     info = infos.get(0);
