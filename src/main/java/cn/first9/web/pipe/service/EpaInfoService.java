@@ -9,4 +9,5 @@ import java.util.List;
 @Service
 public interface EpaInfoService {
     List<EpaInfo> selectAll(EpaInfo info);
+    List<EpaInfo> getDeviceInfo(EpaInfo info);
 }

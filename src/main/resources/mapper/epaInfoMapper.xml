@@ -21,10 +21,25 @@
     <select id="selectAll" parameterType="cn.first9.web.pipe.vo.EpaInfo" resultMap="EpaInfoResult">
         <include refid="selectInfoTableVo"/>
         <where>
+<!--            <if test="TAGINFO != null and TAGINFO != ''">-->
+<!--                AND lower(TAGINFO) like lower(concat('%', #{TAGINFO}, '%'))-->
+<!--            </if>-->
             <if test="TAGINFO != null and TAGINFO != ''">
-                AND lower(TAGINFO) like lower(concat('%', #{TAGINFO}, '%'))
+                AND TAGINFO = #{TAGINFO}
             </if>
-            and rownum <![CDATA[ <= ]]> 10
+
+        </where>
+
+    </select>
+
+    <select id="getDeviceInfo" parameterType="cn.first9.web.pipe.vo.EpaInfo" resultMap="EpaInfoResult">
+        <include refid="selectInfoTableVo"/>
+        <where>
+
+            <if test="TAGINFO != null and TAGINFO != ''">
+                AND TAGINFO = #{TAGINFO}
+            </if>
+
         </where>
 
     </select>

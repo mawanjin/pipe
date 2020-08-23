@@ -7,6 +7,10 @@ public class EpaInfo {
     private String TANKNUM;
     private String SENSORNUM;
 
+    private String subTag;
+
+    private String value;
+
     public String getTAGNAME() {
         return TAGNAME;
     }
@@ -45,5 +49,21 @@ public class EpaInfo {
 
     public void setSENSORNUM(String SENSORNUM) {
         this.SENSORNUM = SENSORNUM;
+    }
+
+    public String getSubTag() {
+        return subTag;
+    }
+
+    public void setSubTag(String subTag) {
+        this.subTag = subTag;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 }

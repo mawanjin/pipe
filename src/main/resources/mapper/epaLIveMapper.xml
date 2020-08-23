@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.first9.web.pipe.dao.EpaLiveDao">
+
+    <resultMap type="cn.first9.web.pipe.vo.EpaLive" id="EpaLiveResult">
+        <id     property="tagName"        column="TAGNAME"        />
+        <id     property="value"        column="VALUE"        />
+        <id     property="dateTime"        column="DATETIME"        />
+        <id     property="flag"        column="FLAG"        />
+
+
+    </resultMap>
+
+
+    <sql id="selectEPALiveTableVo">
+        select DATETIME, VALUE, TAGNAME, FLAG from EPA_LIVE
+    </sql>
+
+    <select id="selectAll" parameterType="cn.first9.web.pipe.vo.EpaLive" resultMap="EpaLiveResult">
+        <include refid="selectEPALiveTableVo"/>
+        <where>
+
+            <if test="tagName != null and tagName != ''">
+                AND TAGNAME = #{tagName}
+            </if>
+
+        </where>
+
+         order by DATETIME desc
+
+    </select>
+
+
+</mapper>
